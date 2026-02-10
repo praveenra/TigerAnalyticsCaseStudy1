@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "698bb6e9808efa775712b1ea"
+  },
+  "name": "STORE-1",
+  "city": "Chennai",
+  "state": "Tamilnadu",
+  "country": "India",
+  "currency": "INR",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2026-02-10T22:53:29.548Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T22:54:32.758Z"
+  },
+  "storeId": "STR-0001",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698bb704808efa775712b1f2"
+  },
+  "name": "STORE-2",
+  "city": "Chennai",
+  "state": "Tamilnadu",
+  "country": "India",
+  "currency": "INR",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2026-02-10T22:53:56.628Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T22:54:28.352Z"
+  },
+  "storeId": "STR-0002",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698bb709808efa775712b1f7"
+  },
+  "name": "STORE-3",
+  "city": "Chennai",
+  "state": "Tamilnadu",
+  "country": "India",
+  "currency": "INR",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2026-02-10T22:54:01.742Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T22:54:21.596Z"
+  },
+  "storeId": "STR-0003",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698bb70f808efa775712b1fc"
+  },
+  "name": "STORE-4",
+  "city": "Chennai",
+  "state": "Tamilnadu",
+  "country": "India",
+  "currency": "INR",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2026-02-10T22:54:07.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-10T22:54:16.847Z"
+  },
+  "storeId": "STR-0004",
+  "__v": 0
+}]
