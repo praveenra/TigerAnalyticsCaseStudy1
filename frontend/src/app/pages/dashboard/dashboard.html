@@ -1,0 +1,28 @@
+<div class="top-bar">
+  <!-- Left side -->
+  <span class="left-side">
+    <span class="app-title">Retail APP</span>
+  </span>
+
+  <!-- Right side -->
+  <span class="right-side">
+    <span class="user-greeting" mat-raised-button color="primary">Hi, {{ userName() }}</span>
+    <button mat-raised-button color="accent" (click)="logout()">Logout</button>
+  </span>
+</div>
+
+
+<mat-tab-group
+  [selectedIndex]="activeTabIndex()"
+  (selectedIndexChange)="activeTabIndex.set($event)"
+>
+  <mat-tab label="Pricing">
+    <app-pricing [active]="activeTabIndex() === 0"></app-pricing>
+  </mat-tab>
+  <mat-tab label="Stores">
+    <app-stores [active]="activeTabIndex() === 1"></app-stores>
+  </mat-tab>
+  <mat-tab label="Users">
+    <app-users [active]="activeTabIndex() === 2"></app-users>
+  </mat-tab>
+</mat-tab-group>

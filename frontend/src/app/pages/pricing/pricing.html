@@ -1,0 +1,72 @@
+<div class="pricing-container">
+  <div class="top-bar">
+    <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Search by SKU or Product</mat-label>
+        <input matInput [(ngModel)]="searchTerm" (keyup)="loadPricing()" placeholder="Search...">
+    </mat-form-field>
+
+    <span class="button-row">
+        <button mat-raised-button color="primary" (click)="addPricing()">Add Pricing</button>
+        <!-- Hidden file input -->
+        <!-- <input type="file" #fileInput (change)="onFileSelected($event)" accept=".csv" hidden> -->
+        <!-- Button to trigger file select -->
+        <button mat-raised-button color="accent" (click)="bulkUpload()">Bulk Upload</button>
+        <button mat-raised-button color="accent" (click)="exportPricing()">Export</button>
+    </span>
+  </div>
+
+  <table mat-table [dataSource]="pricings()" matSort (matSortChange)="onSortChange($event)" class="mat-elevation-z8">
+    <ng-container matColumnDef="storeId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Store ID</th>
+      <td mat-cell *matCellDef="let row">{{row.storeId}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="sku">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>SKU</th>
+      <td mat-cell *matCellDef="let row">{{row.sku}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="productName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Product</th>
+      <td mat-cell *matCellDef="let row">{{row.productName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+      <td mat-cell *matCellDef="let row">{{row.price}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="effectiveDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Effective Date</th>
+      <td mat-cell *matCellDef="let row">{{row.effectiveDate | date}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="isActive">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let row">{{row.isActive ? 'Active' : 'Inactive'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let row">
+        <!-- <button mat-raised-button color="primary" (click)="viewPricing(row)">View</button> -->
+        <button mat-raised-button color="accent" (click)="editPricing(row)">Edit</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator
+    [length]="totalRecords()"
+    [pageSize]="pageSize()"
+    [pageSizeOptions]="[5, 10, 25, 50]"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+
+  <div *ngIf="pricings().length === 0 && !loading()" class="empty-message">
+    No pricing records found
+  </div>
+  <div *ngIf="loading()">Loading...</div>
+</div>

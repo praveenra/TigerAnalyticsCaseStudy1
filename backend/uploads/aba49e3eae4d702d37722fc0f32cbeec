@@ -1,0 +1,6 @@
+"storeId","sku","productName","price","effectiveDate","isActive"
+"STR-0008","SKU007","Bred-1",50.8,"2025-10-30",false
+"STR-0008","SKU004","Lazz",50.5,"2025-10-10",true
+"STRSTR-0008","SKU001","avin milk",500.5,"2025-10-10",true
+"STRSTR-0009","SKU001","avin milk",500.5,"2025-10-10",true
+"STR-0009","SKU005","bickate",50.5,"2025-10-10",true

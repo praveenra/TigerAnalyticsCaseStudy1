@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>{{ data?.id ? 'Edit Pricing' : 'Add Pricing' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>Store ID</mat-label>
+    <input matInput formControlName="storeId">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>SKU</mat-label>
+    <input matInput formControlName="sku">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>Product Name</mat-label>
+    <input matInput formControlName="productName">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>Price</mat-label>
+    <input matInput type="number" formControlName="price">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>Effective Date</mat-label>
+    <input matInput type="date" formControlName="effectiveDate">
+  </mat-form-field>
+
+  <div style="text-align: right; margin-top: 12px;">
+    <button mat-button type="button" (click)="close()">Cancel</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loading()">
+      {{ data?.id ? 'Update' : 'Add' }}
+    </button>
+  </div>
+</form>

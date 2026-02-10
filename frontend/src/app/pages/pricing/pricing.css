@@ -1,0 +1,29 @@
+.pricing-container {
+  padding: 16px;
+}
+
+table {
+  width: 100%;
+}
+
+button {
+  margin-right: 8px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between; /* puts first item left, second item right */
+  align-items: center;            /* vertically center */
+  margin-bottom: 16px;            /* spacing below the row */
+  gap: 16px;                      /* optional spacing between items if needed */
+}
+
+.search-field {
+  flex: 1;             /* makes the search field take all available space */
+  max-width: 400px;    /* optional max width */
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;            /* spacing between buttons */
+}

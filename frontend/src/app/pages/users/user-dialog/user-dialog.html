@@ -1,0 +1,56 @@
+<h2 mat-dialog-title>{{ data?.id ? 'Edit Store' : 'Add Store' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <!-- <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>Store ID</mat-label>
+    <input matInput formControlName="storeId">
+  </mat-form-field> -->
+  <mat-form-field *ngIf="data?.id" appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>User ID</mat-label>
+    <input matInput formControlName="_id" readonly>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>User Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>Role</mat-label>
+    <mat-select formControlName="role">
+    <mat-option value="ADMIN">ADMIN</mat-option>
+    <mat-option value="MANAGER">MANAGER</mat-option>
+    <mat-option value="USER">USER</mat-option>
+  </mat-select>
+  </mat-form-field>
+
+  <!-- <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>Country</mat-label>
+    <input matInput formControlName="country">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 12px;">
+    <mat-label>State</mat-label>
+    <input matInput formControlName="state">
+  </mat-form-field> -->
+
+ <mat-form-field *ngIf="data?.id" appearance="outline" style="width: 100%; margin-bottom: 12px;">
+  <mat-label>Is Active</mat-label>
+  <mat-select formControlName="isActive">
+    <mat-option [value]="true">Active</mat-option>
+    <mat-option [value]="false">Inactive</mat-option>
+  </mat-select>
+</mat-form-field>
+
+  <div style="text-align: right; margin-top: 12px;">
+    <button mat-button type="button" (click)="close()">Cancel</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loading()">
+      {{ data?.id ? 'Update' : 'Add' }}
+    </button>
+  </div>
+</form>
