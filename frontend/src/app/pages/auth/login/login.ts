@@ -55,4 +55,8 @@ export class Login {
       this.loading = false;
     }
   }
+
+  goToRegister() {
+    this.router.navigate(['/register']); // navigate to registration page
+  }
 }

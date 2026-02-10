@@ -1,1 +1,28 @@
-<p>register works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" class="register-form">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Confirm Password</mat-label>
+    <input matInput type="password" formControlName="confirmPassword">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="loading">
+    {{ loading ? 'Registering...' : 'Register' }}
+  </button>
+  <button mat-raised-button color="secondary" type="button" (click)="goToLogin()">
+    Login
+  </button>
+</form>

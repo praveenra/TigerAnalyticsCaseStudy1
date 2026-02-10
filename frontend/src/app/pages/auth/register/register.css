@@ -1,0 +1,12 @@
+.register-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.full-width {
+  width: 100%;
+}

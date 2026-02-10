@@ -20,5 +20,12 @@
     <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
 
     <button type="submit" [disabled]="loading">{{ loading ? 'Logging in...' : 'Login' }}</button>
+    <br/>
+    <div class="register-link">
+      <span>Don't have an account?</span>
+      <button mat-button color="secondary" type="button" (click)="goToRegister()">
+        Create an Account
+      </button>
+    </div>
   </form>
 </div>

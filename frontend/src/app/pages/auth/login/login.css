@@ -39,3 +39,20 @@ button {
   background-color: #f44336; /* red */
   color: #fff;
 }
+
+.register-link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-link button {
+  padding: 10px 16px;
+  min-width: auto;
+  font-weight: 600;
+  text-transform: none; /* Keep text as-is */  
+  background-color:#999;
+}
