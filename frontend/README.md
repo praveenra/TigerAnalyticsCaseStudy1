@@ -17,23 +17,25 @@ It provides a user interface for authentication, image upload, and result visual
 
 ## 📂 Project Structure
 
-frontend/
-├── src/
-│ ├── app/
-│ │ ├── core/
-| | | ├──guards
-| | | ├──Services
-│ │ ├── pages/
-| | |  ├──auth
-| | |  ├──dashboard
-| | |  ├──pricing
-| | |  ├──stores
-| | |  ├──users
-│ ├── assets/
-│ └── environments/
-├── angular.json
-├── package.json
-└── README.md
+    frontend/
+      ├── src/
+      │   ├── app/
+      │   │   ├── core/
+      │   │   │   ├── guards/
+      │   │   │   └── services/
+      │   │   ├── pages/
+      │   │   │   ├── auth/
+      │   │   │   ├── dashboard/
+      │   │   │   ├── pricing/
+      │   │   │   ├── stores/
+      │   │   │   └── users/
+      │   ├── assets/
+      │   └── environments/
+      ├── angular.json
+      ├── package.json
+      └── README.md
+
+
 
 
 ---
