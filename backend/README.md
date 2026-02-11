@@ -18,18 +18,19 @@ It provides REST APIs for authentication, image processing, and business logic.
 ---
 
 ## 📂 Project Structure
-backend/
-├── src/
-│ ├── controllers/
-│ ├── routes/
-│ ├── services/
-│ ├── models/
-│ ├── middlewares/
-│ └── utils/
-├── config/
-├── package.json
-├── .env.example
-└── README.md
+
+    backend/
+    ├── src/
+    │   ├── controllers/
+    │   ├── routes/
+    │   ├── services/
+    │   ├── models/
+    │   ├── middlewares/
+    │   └── utils/
+    ├── config/
+    ├── package.json
+    ├── .env.example
+    └── README.md
 
 ---
 
