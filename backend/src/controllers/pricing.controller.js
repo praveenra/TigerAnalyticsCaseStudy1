@@ -87,10 +87,13 @@ export const uploadPricingCSV = async (req, res) => {
 
   const filePath = req.file.path;
   const results = [];
+  const errorsRows = [];
+  let rowNumber = 1;
 
   fs.createReadStream(filePath)
     .pipe(parse({ columns: true, trim: true }))
     .on('data', async (row) => {
+      const currentRow = ++rowNumber;
       const item = {
         storeId: (row['Store ID'] || row['storeId'] || '').trim(),
         sku: (row['SKU'] || row['sku'] || '').trim(),
@@ -101,6 +104,8 @@ export const uploadPricingCSV = async (req, res) => {
     };
       if (item.storeId && item.sku && !isNaN(item.price) && item.effectiveDate) {
         results.push(item);
+      }else{
+        errorsRows.push(currentRow);
       }
     })
     .on('end', async () => {
@@ -122,7 +127,7 @@ export const uploadPricingCSV = async (req, res) => {
 
         await Pricing.bulkWrite(bulkOps);
       fs.unlinkSync(filePath);
-      res.json({ success: true, message: `${results.length} pricing records uploaded successfully` });
+      res.json({ success: true, message: `${results.length} pricing records uploaded successfully, Error Row No: ${errorsRows.join(', ')}` });
     })
     .on('error', (err) => {
       fs.unlinkSync(filePath);
